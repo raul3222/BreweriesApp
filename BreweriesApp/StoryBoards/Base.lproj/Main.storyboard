@@ -16,9 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="pwi-9e-nCT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="O2y-r6-iOJ" customClass="CellView" customModule="BreweriesApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="64.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O2y-r6-iOJ" id="j8u-QR-nDq">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -70,6 +74,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Breweries" id="Pql-6O-NnC"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="pwi-9e-nCT" id="Dbm-wt-1r5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbb-gl-zKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,20 +123,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-Wi-Pp8">
-                                        <rect key="frame" x="0.0" y="91.5" width="27.5" height="20.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jD-kz-ZGj">
-                                        <rect key="frame" x="0.0" y="122" width="38" height="20.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvg-yh-5H6">
                                         <rect key="frame" x="0.0" y="91.5" width="58.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -152,12 +145,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="173" id="2HF-xm-M3d"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="pzi-Wi-Pp8"/>
-                                        <exclude reference="1jD-kz-ZGj"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="emf-q5-RYo"/>
@@ -172,11 +159,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="gJn-hb-Crn"/>
                     <connections>
-                        <outlet property="cityLabel" destination="pzi-Wi-Pp8" id="fde-Ex-U1d"/>
                         <outlet property="countryLabel" destination="Qvg-yh-5H6" id="4D5-4U-iMu"/>
                         <outlet property="nameLabel" destination="afX-xz-JU9" id="zYd-aU-aQl"/>
                         <outlet property="phoneLabel" destination="SAJ-Ca-DTt" id="3Mk-1h-9xJ"/>
-                        <outlet property="stateLabel" destination="1jD-kz-ZGj" id="59O-yj-bGD"/>
                         <outlet property="streetLabel" destination="f5Z-k7-3Z0" id="iN4-2F-vXF"/>
                         <outlet property="typeLabel" destination="k8f-q9-Wsw" id="jPk-rE-SLK"/>
                         <outlet property="websiteLabel" destination="vTp-89-DH5" id="d7g-H1-ZeC"/>

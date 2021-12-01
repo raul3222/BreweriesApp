@@ -19,12 +19,16 @@ struct Brewery: Decodable {
     let countyProvince: String?
     
     init(breweryData: [String: Any]) {
-        name = breweryData["name"] as! String
+        if let name = breweryData["name"] as? String {
+            self.name = name
+        } else {
+            self.name = ""
+        }
         breweryType = breweryData["brewery_type"] as? String
         street = breweryData["street"] as? String
-        city = breweryData["city"] as! String
+        city = breweryData["city"] as? String ?? ""
         state = breweryData["state"] as? String
-        country = breweryData["country"] as! String
+        country = breweryData["country"] as? String ?? ""
         phone = breweryData["phone"] as? String
         websiteUrl = breweryData["website_url"] as? String
         countyProvince = breweryData["county_province"] as? String

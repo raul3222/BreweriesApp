@@ -12,12 +12,9 @@ class DetailedInfoViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var streetLabel: UILabel!
-    @IBOutlet var cityLabel: UILabel!
-    @IBOutlet var stateLabel: UILabel!
     @IBOutlet var countryLabel: UILabel!
     @IBOutlet var websiteLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
-    
     
     var brewery: Brewery!
     override func viewDidLoad() {
@@ -29,7 +26,4 @@ class DetailedInfoViewController: UIViewController {
         websiteLabel.text = "Website: \(brewery.websiteUrl ?? "-")"
         phoneLabel.text = "Phone: \(brewery.phone ?? "-")"
     }
-    
-    
-
 }
